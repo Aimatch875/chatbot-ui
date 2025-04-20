@@ -69,7 +69,7 @@ export async function POST(request: Request) {
 
       chunks = openaiFileItems
     } else if (embeddingsProvider === "local") {
-      const localEmbedding = await generateLocalEmbedding(userInput)
+      const localEmbedding = await generateLocalEmbedding()
 
       const { data: localFileItems, error: localFileItemsError } =
         await supabaseAdmin.rpc("match_file_items_local", {

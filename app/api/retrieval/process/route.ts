@@ -126,7 +126,7 @@ export async function POST(req: Request) {
     } else if (embeddingsProvider === "local") {
       const embeddingPromises = chunks.map(async chunk => {
         try {
-          return await generateLocalEmbedding(chunk.content)
+          return await generateLocalEmbedding()
         } catch (error) {
           console.error(`Error generating embedding for chunk: ${chunk}`, error)
 
